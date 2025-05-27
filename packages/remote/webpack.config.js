@@ -7,10 +7,12 @@ const PORT = 3001;
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: PORT,
+ devServer: {
+  static: {
+    directory: path.join(__dirname, "dist"),
   },
+  port: PORT,
+},
   output: {
     publicPath: "auto",
   },
