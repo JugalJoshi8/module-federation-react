@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const  { ModuleFederationPlugin } = require("@module-federation/enhanced");
-const dependencies = require("./package.json").dependencies;
+const mfConfig = require('./module-federation.config');
 
 const PORT = 3001;
 
@@ -35,28 +35,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ModuleFederationPlugin({
-      name: "mfe",
-// === THIS PART IS NEW ====
-      exposes: {
-          "./app": "./src/App"
-      },
-// =========================
-      filename: "remoteEntry.js",
-      shared: {
-        ...dependencies,
-        react: {
-          singleton: true,
-          eager: true,
-          requiredVersion: dependencies["react"],
-        },
-        "react-dom": {
-          singleton: true,
-          eager: true,
-          requiredVersion: dependencies["react-dom"],
-        },
-      },
-    }),
+    new ModuleFederationPlugin(mfConfig),
     new HtmlWebpackPlugin({
       manifest: "./public/manifest.json",
       favicon: "./public/favicon.ico",
