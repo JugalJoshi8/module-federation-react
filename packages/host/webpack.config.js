@@ -35,7 +35,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ModuleFederationPlugin(mfConfig),
+   new ModuleFederationPlugin(mfConfig),
     new HtmlWebpackPlugin({
       manifest: "./public/manifest.json",
       favicon: "./public/favicon.ico",

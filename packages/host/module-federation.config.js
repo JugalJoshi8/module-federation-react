@@ -1,9 +1,10 @@
 const { dependencies } = require('./package.json');
+const path = require('path');
 
 module.exports = {
   name: "container",
     remotes: {
-        mfe1: "mfe@http://localhost:3001/remoteEntry.js",
+      //  mfe1: "mfe@http://localhost:3001/remoteEntry.js",
       },
       filename: "remoteEntry.js",
       shared: {
@@ -18,5 +19,6 @@ module.exports = {
           eager: true,
           requiredVersion: dependencies["react-dom"],
         },
-      }
+      },
+     // runtimePlugins: [path.resolve(__dirname, './custom-runtime-plugin.js')]
 };

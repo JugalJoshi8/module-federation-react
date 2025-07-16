@@ -1,7 +1,14 @@
 import React from 'react';
+import {  loadRemote , registerRemotes} from '@module-federation/enhanced/runtime'
+
 import "./App.css";
 
-const MFE = React.lazy(() => import("mfe1/app"));
+  registerRemotes([{
+    name: 'mfe',
+    entry: 'http://localhost:3001/remoteEntry.js'
+  }])
+
+const MFE = React.lazy(() => loadRemote('mfe/app'));
 
 function App() {
   return (
