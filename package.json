@@ -5,7 +5,9 @@
   ],
   "scripts": {
     "start": "lerna run --parallel start",
+    "start:rs": "lerna run --parallel start:rs",
     "build": "lerna run build",
+    "build:rs": "lerna run build:rs",
     "serve": "lerna run --parallel serve",
     "clean": "lerna run --parallel clean"
   },
@@ -14,6 +16,10 @@
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
+    "@module-federation/enhanced": "^0.17.0",
+    "@rsbuild/core": "1.1.2",
+    "@rsbuild/plugin-react": "1.0.7",
+    "@rspack/core": "1.1.1",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "webpack serve --open --mode development",
+    "start:rs": "rsbuild dev",
     "build": "webpack --mode production",
+    "build:rs": "rsbuild build",
     "serve": "serve dist -p 3001",
     "clean": "rm -rf dist"
   }
